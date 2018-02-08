@@ -11,7 +11,7 @@
 
 <meta name="author" content="Jin Xu" />
 
-<meta name="date" content="2018-02-07" />
+<meta name="date" content="2018-02-08" />
 
 <title>STAT 5361 - Homework 2</title>
 
@@ -123,7 +123,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">STAT 5361 - Homework 2</h1>
 <h4 class="author"><em>Jin Xu</em></h4>
-<h4 class="date"><em>07 February 2018</em></h4>
+<h4 class="date"><em>08 February 2018</em></h4>
 
 </div>
 
@@ -158,7 +158,8 @@ The graph of the log-likelihood function of <span class="math inline">\(\theta\)
 <pre><code>## when the starting point is 7, the MLE for theta is 4.239458e+13</code></pre>
 <pre><code>## when the starting point is 8, the MLE for theta is 4.487811e+13</code></pre>
 <pre><code>## when the starting point is 38, the MLE for theta is 3.938691e+13</code></pre>
-<pre><code>## when the starting point is  3.257778 the MLE for theta is  3.021345 .   The sample mean is a good starting point.</code></pre>
+<pre><code>## when the starting point is  3.257778 the MLE for theta is  3.021345</code></pre>
+<pre><code>## [1] &quot;The sample mean is a good starting point.&quot;</code></pre>
 </div>
 <div id="problem-1c" class="section level4 unnumbered">
 <h4>Problem 1(c)</h4>
@@ -193,7 +194,7 @@ The graph of the log-likelihood function of <span class="math inline">\(\theta\)
 </div>
 <div id="problem-1d" class="section level4 unnumbered">
 <h4>Problem 1(d)</h4>
-<p>Apply fisher scoring to find the MLE</p>
+<p>Apply fisher scoring to find the MLE. The MLE coverges to either <span class="math inline">\(-0.5914\)</span> or <span class="math inline">\(3.0213\)</span>.</p>
 <pre><code>## when the starting point is -11, the MLE for theta is -0.5915031</code></pre>
 <pre><code>## when the starting point is -1, the MLE for theta is -0.5915022</code></pre>
 <pre><code>## when the starting point is 0, the MLE for theta is -0.5914394</code></pre>
@@ -260,7 +261,8 @@ K_start &lt;- 1100
 r_start &lt;- 0.04
 N0_start &lt;- 2
 # use nls model                
-m &lt;- nls(formula, data = beetles, start=list(K=K_start, r = r_start, N0 = N0_start))
+m &lt;- nls(formula, data = beetles, 
+         start=list(K=K_start, r = r_start, N0 = N0_start))
 coef(summary(m), start)</code></pre>
 <pre><code>##        Estimate Std. Error   t value     Pr(&gt;|t|)
 ## K  1063.7048847 47.7780479 22.263465 9.325567e-08
