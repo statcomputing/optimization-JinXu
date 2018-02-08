@@ -3,6 +3,8 @@ title: "STAT 5361 - Homework 2"
 author: "Jin Xu"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
+  html_document:
+    df_print: paged
   pdf_document: default
 documentclass: article
 fontsize: 12pt
@@ -109,7 +111,8 @@ cat("when the starting point is 38, the MLE for theta is" , result9)
 
 theta0 <- mean(x)
 result10 <- Newton_Raphson(theta0, gprime, g2prime)
-cat("when the starting point is ",mean(x), "the MLE for theta is " , result10, ".   The sample mean is a good starting point.")
+cat("when the starting point is ",mean(x), "the MLE for theta is " , result10)
+print("The sample mean is a good starting point.")
 ```
 
 #### Problem 1(c) {-}
@@ -258,7 +261,7 @@ cat("when the starting point is 38, alpha is 0.25, the MLE for theta is" , resul
 
 #### Problem 1(d) {-}
 
-Apply fisher scoring to find the MLE
+Apply fisher scoring to find the MLE. The MLE coverges to either $-0.5914$ or $3.0213$.
 ```{r q1e, echo = FALSE, eval=TRUE}
 source('fisher_scoring_ iterations_XJ.R')
 x <- c (1.77, -0.23, 2.76, 3.80, 3.47, 56.75, -1.34, 4.24, -2.44,
@@ -397,7 +400,8 @@ K_start <- 1100
 r_start <- 0.04
 N0_start <- 2
 # use nls model                
-m <- nls(formula, data = beetles, start=list(K=K_start, r = r_start, N0 = N0_start))
+m <- nls(formula, data = beetles, 
+         start=list(K=K_start, r = r_start, N0 = N0_start))
 coef(summary(m), start)
 ```
 
